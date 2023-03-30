@@ -12,8 +12,7 @@ export class MainComponent {
 
   openSearch() {
     const dialogRef = this.dialog.open(DialogSearchComponent, {
-      width: '200px',
-      height: '300px'
+      width: '500px',
     });
   }
 }

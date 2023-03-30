@@ -18,9 +18,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogSearchComponent } from './dialog-search/dialog-search.component';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -46,8 +47,9 @@ import {MatMenuModule} from '@angular/material/menu';
     ReactiveFormsModule,
     MatInputModule,
     MatDialogModule,
-    MatMenuModule
-    
+    MatMenuModule,
+    MatCardModule
+
 
 
   ],

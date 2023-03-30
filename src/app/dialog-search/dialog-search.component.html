@@ -1,3 +1,15 @@
-<div class="search_wrapper">
-    Here
-</div>
+<form class="search_wrapper">
+    <mat-form-field class="form_container" appearance="fill">
+        <mat-icon class="close_dialog" (click)="closeDialog()">close</mat-icon>
+        <input type="text" placeholder="Search" matInput>
+    </mat-form-field>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Previous search</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions class="search_history">
+            <button *ngFor="let searched of searchlist"># {{searched}}</button>
+            <button class="clear_search_btn" (click)="clearSearch()">clear search</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

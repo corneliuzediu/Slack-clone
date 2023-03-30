@@ -15,8 +15,8 @@
             </button>
         </div>
         <div class="header_right">
-            <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-            <mat-menu #menu="matMenu">
+            <button mat-button [matMenuTriggerFor]="myProfile">Menu</button>
+            <mat-menu #myProfile="matMenu" xPosition="before">
                 <button mat-menu-item>Item 1</button>
                 <button mat-menu-item>Item 2</button>
             </mat-menu>
@@ -30,8 +30,6 @@
             <div>Channels</div> <!-- Holder -->
             <div>Direct Messages</div> <!-- Holder -->
         </mat-drawer>
-        <router-outlet>
-        </router-outlet>
 
     </mat-drawer-container>
 </div>

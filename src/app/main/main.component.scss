@@ -16,11 +16,11 @@ $text-color: rgb(200, 200, 200);
     display: flex;
     justify-content: space-between;
     width: 100%;
-    min-height: 50px;
-    height: 50px;
+    z-index: 10;
     color: $text-color;
     padding: unset;
     background-color: $bg-color-1;
+    overflow: visible;
 }
 
 
@@ -79,6 +79,7 @@ $text-color: rgb(200, 200, 200);
     height: calc(100% - 50px);
     background-color: $bg-color-2;
     color: $text-color;
+    z-index: -1;
 }
 
 

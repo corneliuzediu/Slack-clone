@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-dialog-search',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog-search.component.scss']
 })
 export class DialogSearchComponent {
+  searchlist: Array<any> = ['Liu','Marco', 'Danny'];
+  constructor(public dialog: MatDialog) { }
+
+
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
+
+
+  clearSearch() {
+
+  }
 
 }
