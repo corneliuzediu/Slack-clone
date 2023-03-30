@@ -1,0 +1,22 @@
+.log_in_holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    min-height: 100svh;
+    font-size: 2rem;
+
+    button {
+        background-color: firebrick;
+        font-size: 2rem;
+        padding: 16px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    p{
+        font-size: 1.4rem;
+    }
+}
