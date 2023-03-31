@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogSearchComponent } from '../dialog-search/dialog-search.component';
 
 @Component({
   selector: 'app-main',
@@ -8,11 +7,18 @@ import { DialogSearchComponent } from '../dialog-search/dialog-search.component'
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
+  searchlist: Array<any> = ['Liu', 'Marco', 'Danny'];
+  panelOpenState = false;
+
   constructor(public dialog: MatDialog) { }
 
-  openSearch() {
-    const dialogRef = this.dialog.open(DialogSearchComponent, {
-      width: '500px',
-    });
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
+
+
+  clearSearch() {
+
   }
 }
