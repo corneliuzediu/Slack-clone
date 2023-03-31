@@ -1,14 +1,17 @@
 .menu-header {
+    margin-left: 9px;
+    margin-top: 8px;
     display: flex;
     align-items: center;
     color: rgb(159, 159, 159);
     img {
         height: 10px;
         width: auto;
-        border-radius: 2px;
+        border-radius: 5px;
         padding: 7px;
         &:hover {
             cursor: pointer;
+            background-color: rgb(56, 56, 56);
         }
     }
     span {
@@ -16,5 +19,27 @@
         padding-left: 4px;
         padding-right: 4px;
         padding-bottom: 4px;
+        border-radius: 5px;
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(56, 56, 56);
+        }
+    }
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(159, 159, 159);
+    gap: 12px;
+    padding-left: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    width: 100%;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(56, 56, 56);
     }
 }
