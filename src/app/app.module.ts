@@ -22,13 +22,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogSearchComponent } from './dialog-search/dialog-search.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     InitialPageComponent,
-    DialogSearchComponent
+    DialogSearchComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
