@@ -22,6 +22,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatDialogModule,
     MatMenuModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatBadgeModule,
+    MatTooltipModule,
 
 
 

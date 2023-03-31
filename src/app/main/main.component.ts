@@ -8,17 +8,18 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MainComponent {
   searchlist: Array<any> = ['Liu', 'Marco', 'Danny'];
-  panelOpenState = false;
+  searchValue: string;
+  // panelOpenState = false;
 
   constructor(public dialog: MatDialog) { }
 
 
-  closeDialog() {
-    this.dialog.closeAll();
+  clearSearch() {
+    this.searchlist = []
   }
 
-
-  clearSearch() {
-
+  search() {
+    this.searchlist.unshift(this.searchValue);
+    this.searchValue = '';
   }
 }
