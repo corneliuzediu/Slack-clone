@@ -1,0 +1,20 @@
+.menu-header {
+    display: flex;
+    align-items: center;
+    color: rgb(159, 159, 159);
+    img {
+        height: 10px;
+        width: auto;
+        border-radius: 2px;
+        padding: 7px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    span {
+        padding-top: 6px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 4px;
+    }
+}
