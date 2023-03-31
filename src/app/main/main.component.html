@@ -37,7 +37,8 @@
                     <mat-card-content class="menu_user_body">
                         <div class="menu_status" matTooltip="Update your status" [matTooltipPosition]="'left'">Status
                         </div>
-                        <div class="menu_profile" matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
+                        <div [routerLink]="['/main',{ outlets: {secondary_outlet:['me']}}]" class="menu_profile"
+                            matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
                         </div>
                         <div class="menu_logOut">
                             <button routerLink="/" mat-button color="warn">Log out</button>
@@ -52,6 +53,7 @@
     <!-- Sidenav -->
 
     <mat-drawer-container class="sidenav_wrapper" autosize>
+        <router-outlet name="secondary_outlet"></router-outlet>
         <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
             <app-sidenav></app-sidenav>
         </mat-drawer>

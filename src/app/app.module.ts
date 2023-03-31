@@ -24,6 +24,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppComponent,
     MainComponent,
     InitialPageComponent,
-    SidenavComponent
+    SidenavComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
