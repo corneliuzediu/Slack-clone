@@ -9,10 +9,18 @@
             <span class="example-spacer"></span>
         </div>
         <div class="header_center">
-            <button mat-button (click)="openSearch()">
-                Search ...
-                <mat-icon>search</mat-icon>
-            </button>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <input placeholder="Search ..." matInput>
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-card-actions class="search_history">
+                    <button *ngFor="let searched of searchlist"># {{searched}}</button>
+                    <button class="clear_search_btn" (click)="clearSearch()">clear search</button>
+                </mat-card-actions>
+            </mat-expansion-panel>
         </div>
         <div class="header_right">
             <button mat-button [matMenuTriggerFor]="myProfile">Menu</button>
