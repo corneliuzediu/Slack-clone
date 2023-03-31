@@ -20,19 +20,3 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-.cdk-overlay-pane {
-    position: relative !important;
-    width: 100% !important;
-    max-width: unset !important;
-    z-index: 10;
-}
-
-app-dialog-search {
-    position: fixed;
-    left: 54%;
-    top: 10px;
-    width: 500px;
-    transform: translateX(-50%);
-    background-color: $bg-color-1;
-}
