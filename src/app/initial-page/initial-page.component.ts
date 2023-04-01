@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./initial-page.component.scss']
 })
 export class InitialPageComponent implements OnInit {
+  docID = 'P9JqkUnlL2iGANgAKXMm';
   constructor(public dialogAddUser: MatDialog, private router: Router, private firestore: AngularFirestore) { }
 
 
@@ -19,15 +20,7 @@ export class InitialPageComponent implements OnInit {
   }
 
   bypassLogIn() {
-
-
-    this.firestore
-      .collection('users')
-      .get()
-      .subscribe((docID) => {
-        console.log(docID);
-        this.router.navigateByUrl('/main/' + docID);
-        })
+        this.router.navigateByUrl('/main/' + this.docID);
   }
 
   openDialogAddUser() {
