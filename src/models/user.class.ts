@@ -3,8 +3,8 @@ export class User {
     lastName: String;
     email: string;
     password: string;
-    telefon: number;
-    ID: string;                     // user ID
+    telephone: number;
+    ID: number;                     // user ID
     img: any;                       // img file or path to img
     title: string;                  // title or extra detail of person
     status: string;                 // Active, AFK, Log out
@@ -18,7 +18,7 @@ export class User {
         this.lastName = obj ? obj.lastName : '';
         this.email = obj ? obj.email : '';
         this.password = obj ? obj.email : '';
-        this.telefon = obj ? obj.telefon : '';
+        this.telephone = obj ? obj.telephone : '';
         this.ID = obj ? obj.ID : '';
         this.img = obj ? obj.img : '';;
         this.title = obj ? obj.title : '';;
@@ -37,7 +37,7 @@ export class User {
             lastName: this.lastName,
             email: this.email,
             password: this.password,
-            telefon: this.telefon,
+            telephon: this.telephone,
             ID: this.ID,
             img: this.img,
             title: this.title,

@@ -22,10 +22,13 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DialogAddUserHolderComponent } from './dialog-add-user-holder/dialog-add-user-holder.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -59,6 +62,11 @@ import { DialogAddUserHolderComponent } from './dialog-add-user-holder/dialog-ad
     MatExpansionModule,
     MatBadgeModule,
     MatTooltipModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    MatProgressBarModule,
+    
+
 
 
 

@@ -7,7 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 const routes: Routes = [
   { path: '', component: InitialPageComponent },
   {
-    path: 'main', component: MainComponent,
+    path: 'main/:id', component: MainComponent,
     children: [
       { path: 'me', component: UserProfileComponent, outlet: 'secondary_outlet' }
     ]

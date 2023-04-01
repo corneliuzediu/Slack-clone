@@ -16,19 +16,54 @@ body {
     margin: 0px;
 }
 
+
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+
+// Classes for spaceing
+
+.mt-16{
+    margin-top: 16px;
+}
+
+
+.mb-16{
+    margin-bottom: 16px;
+}
+
+
+.mr-16{
+    margin-right: 16px;
+}
+
+.ml-16{
+    margin-left: 16px;
+}
+
+
+.width_full{
+    width: 100%;
+}
+
+
+
+
+
+
+// Classes to reset Angular Material default behaviour 
 .mat-mdc-menu-panel.mat-mdc-menu-panel {
     max-width: unset !important;
     border-radius: 10px;
 }
 
+
 .mat-mdc-menu-content{
     padding: unset !important;
 }
+
 
 .mdc-menu-surface{
     background-color: transparent;

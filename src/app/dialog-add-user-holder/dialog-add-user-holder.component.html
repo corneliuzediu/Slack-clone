@@ -1,1 +1,32 @@
-<p>dialog-add-user-holder works!</p>
+<h2>Add a user</h2>
+<div mat-dialog-content class="add_user_wrapper">
+    <div class="width_full">
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>First name</mat-label>
+            <input [disabled]="loading" type="text" [(ngModel)]="user.firstName" matInput placeholder="Add first name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last name</mat-label>
+            <input [disabled]="loading" type="text" [(ngModel)]="user.lastName" matInput placeholder="Add last name">
+        </mat-form-field>
+    </div>
+    <mat-form-field class="width_full" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input [disabled]="loading" type="email" [(ngModel)]="user.email" matInput placeholder="Add email">
+    </mat-form-field>
+    <div>
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input [disabled]="loading" type="password" [(ngModel)]="user.password" matInput placeholder="Add password">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Telephone</mat-label>
+            <input [disabled]="loading" type="tel" [(ngModel)]="user.telephone" matInput placeholder="Add Telephone">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button (click)="dialogRef.close()" [disabled]="loading" mat-button mat-dialog-close>Cancel</button>
+        <button [disabled]="loading" (click)="saveUser()" mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+    </div>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>

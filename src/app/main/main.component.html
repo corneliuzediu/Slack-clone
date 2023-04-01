@@ -37,7 +37,7 @@
                     <mat-card-content class="menu_user_body">
                         <div class="menu_status" matTooltip="Update your status" [matTooltipPosition]="'left'">Status
                         </div>
-                        <div [routerLink]="['/main',{ outlets: {secondary_outlet:['me']}}]" class="menu_profile"
+                        <div [routerLink]="['/main/:id',{ outlets: {secondary_outlet:['me']}}]" class="menu_profile"
                             matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
                         </div>
                         <div class="menu_logOut">
