@@ -25,6 +25,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DialogAddUserHolderComponent } from './dialog-add-user-holder/dialog-add-user-holder.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MainComponent,
     InitialPageComponent,
     SidenavComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DialogAddUserHolderComponent
   ],
   imports: [
     BrowserModule,
