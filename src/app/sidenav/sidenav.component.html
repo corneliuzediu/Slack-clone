@@ -4,7 +4,7 @@
     <span>Channels</span>
 </div>
 <div *ngIf="channelsVisible" class="channels">
-    <div *ngFor="let channel of channels" class="channel-item">
+    <div *ngFor="let channel of channels; let i = index" id="channel{{ i }}" class="channel-item" (click)="openItem('channel', i)">
         <span>#</span>
         <span>{{ channel }}</span>
     </div>
@@ -16,8 +16,8 @@
     <span>Direktnachrichten</span>
 </div>
 <div *ngIf="usersVisible" class="channels">
-    <div *ngFor="let user of users" class="channel-item">
-        <span>#</span>
+    <div *ngFor="let user of users; let i = index" id="user{{ i }}" class="channel-item user-item" (click)="openItem('user', i)">
+        <span class="letter">{{ firstLetter[i] }}</span>
         <span>{{ user }}</span>
     </div>
 </div>
