@@ -33,7 +33,6 @@ export class SidenavComponent {
     this.users$.forEach((user) => {
       for (let i = 0; i < user.length; i++) {
         this.firstLetter.push(user[i].firstName.split('')[0]);
-        console.log(user[i].firstName);
       }
     })
   }
