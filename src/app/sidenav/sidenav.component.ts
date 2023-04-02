@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidenav',
@@ -17,23 +19,23 @@ export class SidenavComponent {
     'live-calls',
     'projekt-feedback'
   ];
-  users: any = [
-    'Marco von Baumbach',
-    'Peter Müller',
-    'Marie Kunze',
-    'Paul Panzer'
-  ];
-
+  users: any;
+  users$: Observable<any>;
   firstLetter: any = [];
 
-  constructor() {
+  constructor(public firestore: Firestore) {
+    this.users = collection(this.firestore, 'users');
+    this.users$ = collectionData(this.users);
     this.generateFirstLetter();
   }
 
   generateFirstLetter() {
-    for (let i = 0; i < this.users.length; i++) {
-      this.firstLetter.push(this.users[i].split('')[0]);      
-    }
+    this.users$.forEach((user) => {
+      for (let i = 0; i < user.length; i++) {
+        this.firstLetter.push(user[i].firstName.split('')[0]);
+        console.log(user[i].firstName);
+      }
+    })
   }
 
   showChannels(param: boolean) {
@@ -44,21 +46,23 @@ export class SidenavComponent {
     this.usersVisible = param;
   }
 
-  openItem(param, index){
+  openMenuItem(param, index) {
     this.highlightMenuItem(param, index);
   }
 
   highlightMenuItem(param, index) {
-    for(let i = 0; i < this.channels.length; i++) {
-      if(document.getElementById(`channel${i}`).classList.contains('background-focused')){
-      document.getElementById(`channel${i}`).classList.remove('background-focused');
+    for (let i = 0; i < this.channels.length; i++) {
+      if (document.getElementById(`channel${i}`).classList.contains('background-focused')) {
+        document.getElementById(`channel${i}`).classList.remove('background-focused');
       }
     }
-    for(let i = 0; i < this.users.length; i++) {
-      if(document.getElementById(`user${i}`).classList.contains('background-focused')){
-      document.getElementById(`user${i}`).classList.remove('background-focused');
+    this.users$.forEach((user) => {
+      for (let i = 0; i < user.length; i++) {
+        if (document.getElementById(`user${i}`).classList.contains('background-focused')) {
+          document.getElementById(`user${i}`).classList.remove('background-focused');
+        }
       }
-    }
-    document.getElementById(param + index).classList.add('background-focused');
+      document.getElementById(param + index).classList.add('background-focused');
+    });
   }
 }
