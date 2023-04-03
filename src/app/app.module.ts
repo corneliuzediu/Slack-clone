@@ -29,6 +29,8 @@ import { DialogAddUserHolderComponent } from './dialog-add-user-holder/dialog-ad
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { DialogAddChannelComponent } from './dialog-add-channel/dialog-add-channel.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     InitialPageComponent,
     SidenavComponent,
     UserProfileComponent,
-    DialogAddUserHolderComponent
+    DialogAddUserHolderComponent,
+    DialogAddChannelComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatExpansionModule,
     MatBadgeModule,
     MatTooltipModule,
+    MatButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatProgressBarModule,

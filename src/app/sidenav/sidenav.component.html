@@ -4,10 +4,14 @@
     <span>Channels</span>
 </div>
 <div *ngIf="channelsVisible" class="channels">
-    <div *ngFor="let channel of channels; let i = index" id="channel{{ i }}" class="channel-item" (click)="openMenuItem('channel', i)">
+    <div *ngFor="let channel of channels$ | async; let i = index" id="channel{{ i }}" class="channel-item" (click)="openMenuItem('channel', i)">
         <span>#</span>
-        <span>{{ channel }}</span>
+        <span>{{ channel.title }}</span>
     </div>
+</div>
+<div class="channel-item add-channel" (click)="openAddChannelDialog()">
+    <span class="add-icon">+</span>
+    <span>Channels hinzufügen</span>
 </div>
 
 <div class="menu-header">

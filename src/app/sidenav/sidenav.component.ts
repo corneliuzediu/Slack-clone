@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Firestore, collection, collectionData } from '@angular/fire/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
+import { DialogAddChannelComponent } from '../dialog-add-channel/dialog-add-channel.component';
 
 @Component({
   selector: 'app-sidenav',
@@ -19,13 +21,16 @@ export class SidenavComponent {
     'live-calls',
     'projekt-feedback'
   ];
+  channels$: Observable<any>;
   users: any;
   users$: Observable<any>;
   firstLetter: any = [];
 
-  constructor(public firestore: Firestore) {
+  constructor(public firestore: Firestore, public dialog: MatDialog) {
     this.users = collection(this.firestore, 'users');
     this.users$ = collectionData(this.users);
+    this.channels = collection(this.firestore, 'channels');
+    this.channels$ = collectionData(this.channels);
     this.generateFirstLetter();
   }
 
@@ -49,19 +54,26 @@ export class SidenavComponent {
     this.highlightMenuItem(param, index);
   }
 
+  openAddChannelDialog() {
+      this.dialog.open(DialogAddChannelComponent, {
+      });
+  }
+
   highlightMenuItem(param, index) {
-    for (let i = 0; i < this.channels.length; i++) {
-      if (document.getElementById(`channel${i}`).classList.contains('background-focused')) {
-        document.getElementById(`channel${i}`).classList.remove('background-focused');
-      }
-    }
+    this.channels$.forEach((channel) => {
+      for (let i = 0; i < channel.length; i++) {
+        if (document.getElementById(`channel${i}`).classList.contains('background-focused')) {
+          document.getElementById(`channel${i}`).classList.remove('background-focused');
+        }
+      } 
+    });
     this.users$.forEach((user) => {
       for (let i = 0; i < user.length; i++) {
         if (document.getElementById(`user${i}`).classList.contains('background-focused')) {
           document.getElementById(`user${i}`).classList.remove('background-focused');
         }
-      }
+      } 
       document.getElementById(param + index).classList.add('background-focused');
-    });
+    });  
   }
 }
