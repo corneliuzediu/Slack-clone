@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
@@ -9,17 +9,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  urlID: string;
+  userRoute: any;
+  public userHolder: any;
+
+
+
   searchlist: Array<any> = ['Liu', 'Marco', 'Danny'];
   searchValue: string;
-  urlID: string;
   // panelOpenState = false;
 
   constructor(public dialog: MatDialog,
     private route: ActivatedRoute,
     private firestore: AngularFirestore) { }
 
+
   ngOnInit() {
-    this.route.params.subscribe((params) => {
+    this.userRoute = this.route.params.subscribe((params) => {
       this.urlID = params['id'];
       this
         .firestore
@@ -27,9 +33,16 @@ export class MainComponent implements OnInit {
         .doc(this.urlID)
         .valueChanges()
         .subscribe((user: any) => {
-          console.log(user);
+          // console.log(user);
+          // console.log(params['id']);
+          // console.log(this.userRoute);
+          
         });
     })
+  }
+
+  ngOnDestroy() {
+    this.userRoute.unsubscribe();
   }
 
 

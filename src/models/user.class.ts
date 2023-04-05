@@ -1,17 +1,17 @@
 export class User {
-    firstName: string;
-    lastName: String;
-    email: string;
-    password: string;
-    telephone: number;
-    ID: number;                     // user ID
-    img: any;                       // img file or path to img
-    title: string;                  // title or extra detail of person
-    status: string;                 // Active, AFK, Log out
-    statusTime: string;             // Active since <data>
-    channels: Array<any>;           // Channels connected to the user
-    contacts: Array<any>;           // Contacts connected to the user
-    searchHistory: Array<any>;      // Search history
+    public firstName: string[] = [];
+    public lastName: String;
+    public email: string;
+    public password: string;
+    public telephone: number;
+    public ID: number;                     // user ID
+    public img: any;                       // img file or path to img
+    public title: string;                  // title or extra detail of person
+    public status: string;                 // Active, AFK, Log out
+    public statusTime: string;             // Active since <data>
+    public channels: Array<any>;           // Channels connected to the user
+    public contacts: Array<any>;           // Contacts connected to the user
+    public searchHistory: Array<any>;      // Search history
 
     constructor(obj?: any) {
         this.firstName = obj ? obj.firstName : '';
@@ -37,7 +37,7 @@ export class User {
             lastName: this.lastName,
             email: this.email,
             password: this.password,
-            telephon: this.telephone,
+            telephone: this.telephone,
             ID: this.ID,
             img: this.img,
             title: this.title,

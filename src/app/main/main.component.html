@@ -5,7 +5,7 @@
             <button mat-icon-button class="sidenav_button">
                 <mat-icon (click)="drawer.toggle()">menu</mat-icon>
             </button>
-            <span class="name_app" routerLink="/main" >Slack-clone</span>
+            <span class="name_app" routerLink="../{{urlID}}">Slack-clone</span>
             <span class="example-spacer"></span>
         </div>
         <form class="header_center">
@@ -37,7 +37,7 @@
                     <mat-card-content class="menu_user_body">
                         <div class="menu_status" matTooltip="Update your status" [matTooltipPosition]="'left'">Status
                         </div>
-                        <div [routerLink]="['/main/:id',{ outlets: {secondary_outlet:['me']}}]" class="menu_profile"
+                        <div [routerLink]="['/main/', urlID,{ outlets: {body:['profil']}}]" class="menu_profile"
                             matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
                         </div>
                         <div class="menu_logOut">
@@ -53,7 +53,7 @@
     <!-- Sidenav -->
 
     <mat-drawer-container class="sidenav_wrapper" autosize>
-        <router-outlet name="secondary_outlet"></router-outlet>
+        <router-outlet name="body"></router-outlet>
         <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
             <app-sidenav></app-sidenav>
         </mat-drawer>

@@ -31,6 +31,7 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/compat/f
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DialogAddChannelComponent } from './dialog-add-channel/dialog-add-channel.component';
 import { MatButtonModule } from '@angular/material/button';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { MatButtonModule } from '@angular/material/button';
     SidenavComponent,
     UserProfileComponent,
     DialogAddUserHolderComponent,
-    DialogAddChannelComponent
+    DialogAddChannelComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
