@@ -32,7 +32,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { DialogAddChannelComponent } from './dialog-add-channel/dialog-add-channel.component';
 import { MatButtonModule } from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { DialogAddStatusComponent } from './dialog-add-status/dialog-add-status.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     UserProfileComponent,
     DialogAddUserHolderComponent,
     DialogAddChannelComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    DialogAddStatusComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatProgressBarModule,
-    
+    MatSelectModule
+
 
 
 

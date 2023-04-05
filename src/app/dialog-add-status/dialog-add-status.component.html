@@ -1,0 +1,11 @@
+<div>
+    <h2>Status</h2>
+    <mat-form-field appearance="fill">
+        <mat-label>Status</mat-label>
+        <input matInput #inputStatus [(ngModel)]="status">
+    </mat-form-field>
+    <button (click)="selectStatus('one')" value="one">Away from keyboard</button>
+    <button (click)="selectStatus('two')" value="two">In meeting</button>
+    <button (click)="selectStatus('three')" value="three">In home office</button>
+
+</div>

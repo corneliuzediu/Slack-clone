@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/models/user.class';
+import { DialogAddStatusComponent } from '../dialog-add-status/dialog-add-status.component';
 
 @Component({
   selector: 'app-main',
@@ -9,9 +11,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  user: User = new User;
   urlID: string;
   userRoute: any;
+  logInTime: Date = new Date;
   public userHolder: any;
+  color: string;
 
 
 
@@ -21,7 +26,8 @@ export class MainComponent implements OnInit {
 
   constructor(public dialog: MatDialog,
     private route: ActivatedRoute,
-    private firestore: AngularFirestore) { }
+    private firestore: AngularFirestore,
+    public dialogAddStatus: MatDialog) { }
 
 
   ngOnInit() {
@@ -33,9 +39,9 @@ export class MainComponent implements OnInit {
         .doc(this.urlID)
         .valueChanges()
         .subscribe((user: any) => {
-          // console.log(user);
-          // console.log(params['id']);
-          // console.log(this.userRoute);
+          user.statusTime = this.logInTime.getTime();
+          this.user = user;
+          this.getUserStatus();
           
         });
     })
@@ -53,5 +59,23 @@ export class MainComponent implements OnInit {
   search() {
     this.searchlist.unshift(this.searchValue);
     this.searchValue = '';
+  }
+
+  getUserStatus(){
+    if(this.activeFor() < 2000){
+      this.user.status = true;
+    } else{
+      this.user.status = false;
+    }
+  }
+
+  activeFor(){
+    let checkTime: Date = new Date;
+    let diff = checkTime.getTime() - this.user.statusTime;
+    return diff
+  }
+
+  openDialogAddStatus(){
+    this.dialogAddStatus.open(DialogAddStatusComponent)
   }
 }

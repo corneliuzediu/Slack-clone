@@ -7,8 +7,8 @@ export class User {
     public ID: number;                     // user ID
     public img: any;                       // img file or path to img
     public title: string;                  // title or extra detail of person
-    public status: string;                 // Active, AFK, Log out
-    public statusTime: string;             // Active since <data>
+    public status: boolean;                 // Active, AFK, Log out
+    public statusTime: number;             // Active since <data>
     public channels: Array<any>;           // Channels connected to the user
     public contacts: Array<any>;           // Contacts connected to the user
     public searchHistory: Array<any>;      // Search history
