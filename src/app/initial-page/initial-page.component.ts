@@ -23,6 +23,10 @@ export class InitialPageComponent implements OnInit {
         this.router.navigateByUrl('/main/' + this.docID);
   }
 
+  logIn() {
+    console.log('anmeldung');
+  }
+
   openDialogAddUser() {
     this.dialogAddUser.open(DialogAddUserHolderComponent)
   }

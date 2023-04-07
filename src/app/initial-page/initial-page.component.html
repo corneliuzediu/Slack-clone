@@ -1,6 +1,34 @@
-<div class="log_in_holder">
+<!--<div class="log_in_holder">
     The following button is just a holder to bypass the login section
     <button (click)="bypassLogIn()">Log In</button>
-    <button (click)="openDialogAddUser()">Add user - holder</button> <!-- Fake holder for Sign In-->
+    <button (click)="openDialogAddUser()">Add user - holder</button> 
     <p>P.S. Smile and have a wanderfull day</p>
+</div>--> <!--baselogin platzhalter-->
+
+
+
+<div class="login-container">
+    <mat-card>
+        <mat-card-title>Login</mat-card-title>
+
+        <div>
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="email">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput>
+            </mat-form-field>
+        </div>
+        <div class="button-holder">
+            <button mat-raised-button>Forgot Password</button>
+            <button (click)="bypassLogIn()" mat-raised-button>Guest Login</button>
+        </div>
+        <button (click)="logIn()" mat-raised-button color="primary">Login</button>
+        <button (click)="openDialogAddUser()" mat-raised-button>Sign In</button>
+
+    </mat-card>
 </div>
