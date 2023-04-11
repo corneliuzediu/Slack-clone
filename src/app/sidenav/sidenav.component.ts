@@ -3,6 +3,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DialogAddChannelComponent } from '../dialog-add-channel/dialog-add-channel.component';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -26,7 +27,7 @@ export class SidenavComponent {
   users$: Observable<any>;
   firstLetter: any = [];
 
-  constructor(public firestore: Firestore, public dialog: MatDialog) {
+  constructor(public firestore: Firestore, public dialog: MatDialog, public dataService: DataService) {
     this.users = collection(this.firestore, 'users');
     this.users$ = collectionData(this.users);
     this.channels = collection(this.firestore, 'channels');
@@ -52,6 +53,7 @@ export class SidenavComponent {
 
   openMenuItem(param, index) {
     this.highlightMenuItem(param, index);
+    this.dataService.selectedChannel = param;
   }
 
   openAddChannelDialog() {

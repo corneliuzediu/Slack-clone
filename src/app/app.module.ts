@@ -34,6 +34,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DialogAddStatusComponent } from './dialog-add-status/dialog-add-status.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MatSelectModule } from '@angular/material/select';
     DialogAddUserHolderComponent,
     DialogAddChannelComponent,
     PageNotFoundComponent,
-    DialogAddStatusComponent
+    DialogAddStatusComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
