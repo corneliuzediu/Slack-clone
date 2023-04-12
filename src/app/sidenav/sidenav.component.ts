@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DialogAddChannelComponent } from '../dialog-add-channel/dialog-add-channel.component';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -37,7 +38,8 @@ export class SidenavComponent {
   constructor(
     public firestore: Firestore,
     public dialog: MatDialog,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dataService: DataService
   ) {
     this.users = collection(this.firestore, 'users');
     this.users$ = collectionData(this.users);
@@ -70,6 +72,7 @@ export class SidenavComponent {
 
   openMenuItem(param, index) {
     this.highlightMenuItem(param, index);
+    this.dataService.selectedChannel = param;
   }
 
   openAddChannelDialog() {

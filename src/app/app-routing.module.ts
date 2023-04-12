@@ -6,6 +6,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { DirectMessagesComponent } from './direct-messages/direct-messages.component';
+import { ChatComponent } from './chat/chat.component';
 
 const routes: Routes = [
   { path: '', component: InitialPageComponent },
@@ -20,7 +21,10 @@ const routes: Routes = [
 
     ]
   },
-  { path: '**', component: PageNotFoundComponent }
+  {
+    path: 'main/chat', component: ChatComponent
+  },
+  { path: '**', component: PageNotFoundComponent } 
 ];
 
 @NgModule({
