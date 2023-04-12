@@ -34,6 +34,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DialogAddStatusComponent } from './dialog-add-status/dialog-add-status.component';
 import { MatSelectModule } from '@angular/material/select';
+import { ChannelsComponent } from './channels/channels.component';
+import { DirectMessagesComponent } from './direct-messages/direct-messages.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { MatSelectModule } from '@angular/material/select';
     DialogAddUserHolderComponent,
     DialogAddChannelComponent,
     PageNotFoundComponent,
-    DialogAddStatusComponent
+    DialogAddStatusComponent,
+    ChannelsComponent,
+    DirectMessagesComponent
   ],
   imports: [
     BrowserModule,

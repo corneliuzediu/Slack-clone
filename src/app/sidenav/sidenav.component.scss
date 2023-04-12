@@ -80,3 +80,10 @@
     height: 20px;
     background-color: rgb(69, 69, 69);
 }
+
+
+.channel_container, .contact_container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

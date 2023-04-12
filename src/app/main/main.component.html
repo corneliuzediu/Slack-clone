@@ -30,18 +30,19 @@
                     <mat-card-header>
                         <div mat-card-avatar class="menu_user_img"><img src="./assets/img/user.png"></div>
                         <div class="menu_user_head">
-                            <mat-card-title>Munster Name Vorname</mat-card-title>
-                            <mat-card-subtitle>activ / inactive</mat-card-subtitle>
+                            <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+                            <mat-card-subtitle>{{userStatus}}</mat-card-subtitle>
                         </div>
                     </mat-card-header>
                     <mat-card-content class="menu_user_body">
-                        <div (click)="openDialogAddStatus()" class="menu_status" matTooltip="Update your status" [matTooltipPosition]="'left'">Status
+                        <div (click)="openDialogAddStatus()" class="menu_status" matTooltip="Update your status"
+                            [matTooltipPosition]="'left'">Status
                         </div>
                         <div [routerLink]="['/main/', urlID,{ outlets: {body:['profil']}}]" class="menu_profile"
                             matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
                         </div>
                         <div class="menu_logOut">
-                            <button routerLink="/" mat-button color="warn">Log out</button>
+                            <button onclick="ngOnDestroy()" routerLink="/" mat-button color="warn">Log out</button>
                         </div>
                     </mat-card-content>
                 </mat-card>

@@ -3,6 +3,7 @@ import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { DialogAddChannelComponent } from '../dialog-add-channel/dialog-add-channel.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -26,12 +27,29 @@ export class SidenavComponent {
   users$: Observable<any>;
   firstLetter: any = [];
 
-  constructor(public firestore: Firestore, public dialog: MatDialog) {
+
+  //Von Liu
+  userRoute: any;
+  urlID: string;
+
+  //Ende Liu
+
+  constructor(
+    public firestore: Firestore,
+    public dialog: MatDialog,
+    private route: ActivatedRoute
+  ) {
     this.users = collection(this.firestore, 'users');
     this.users$ = collectionData(this.users);
     this.channels = collection(this.firestore, 'channels');
     this.channels$ = collectionData(this.channels);
     this.generateFirstLetter();
+  }
+
+  ngOnInit() {
+    this.userRoute = this.route.params.subscribe((params) => {
+      this.urlID = params['id'];
+    })
   }
 
   generateFirstLetter() {
@@ -55,8 +73,8 @@ export class SidenavComponent {
   }
 
   openAddChannelDialog() {
-      this.dialog.open(DialogAddChannelComponent, {
-      });
+    this.dialog.open(DialogAddChannelComponent, {
+    });
   }
 
   highlightMenuItem(param, index) {
@@ -65,15 +83,15 @@ export class SidenavComponent {
         if (document.getElementById(`channel${i}`).classList.contains('background-focused')) {
           document.getElementById(`channel${i}`).classList.remove('background-focused');
         }
-      } 
+      }
     });
     this.users$.forEach((user) => {
       for (let i = 0; i < user.length; i++) {
         if (document.getElementById(`user${i}`).classList.contains('background-focused')) {
           document.getElementById(`user${i}`).classList.remove('background-focused');
         }
-      } 
+      }
       document.getElementById(param + index).classList.add('background-focused');
-    });  
+    });
   }
 }

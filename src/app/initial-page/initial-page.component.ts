@@ -37,7 +37,7 @@ export class InitialPageComponent implements OnInit {
 
   }
 
-  onSignup() {
+  onSignup(emailSignup, passswordSignup) {
     
   }
 
