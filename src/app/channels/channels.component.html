@@ -1,1 +1,4 @@
-<p>channels works!</p>
+<div *ngIf="channel" class="input-container">
+    <textarea autofocus placeholder="Nachricht an {{ channel.title }}"></textarea>
+    <button mat-raised-button>send</button>
+</div>

@@ -80,11 +80,6 @@ import { ChatComponent } from './chat/chat.component';
     AngularFirestoreModule,
     MatProgressBarModule,
     MatSelectModule
-
-
-
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

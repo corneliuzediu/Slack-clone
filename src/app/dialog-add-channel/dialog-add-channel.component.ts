@@ -14,6 +14,7 @@ export class DialogAddChannelComponent {
   showErrorMessage: boolean = false;
   coll: any;
   channels$: Observable<any>;
+  id: number;
 
   constructor(public firestore: Firestore, public dialogRef: MatDialogRef<DialogAddChannelComponent>) {
     this.coll = collection(this.firestore, 'channels');
@@ -23,18 +24,34 @@ export class DialogAddChannelComponent {
   saveChannel() {
     let addedChannel = this.newChannel.toLowerCase();
     this.channels$.forEach((channel) => {
-      for (let i = 0; i < channel.length; i++) {
-        if(addedChannel == channel[i].title){
-          this.channelExists = true;
-          this.showErrorMessage = true;
-        }
-      }
+      this.checkIfChannelExists(channel, addedChannel);
       if (this.channelExists == false){
-        addDoc(this.coll, {title: addedChannel});
+        this.generateID();
+        addDoc(this.coll, {
+          ID: this.id,
+          title: addedChannel
+        });
         this.dialogRef.close();
       }
         this.channelExists = false;
     });
+  }
+
+  checkIfChannelExists(channel, addedChannel) {
+    for (let i = 0; i < channel.length; i++) {
+      if(addedChannel == channel[i].title){
+        this.channelExists = true;
+        this.showErrorMessage = true;
+      }
+    }
+  }
+
+  generateID() {
+    let generatedID: number = Math.floor(Math.random() * Math.pow(10, 13));
+    if(generatedID > Math.pow(10, 12)) {
+      this.id = generatedID;
+    }
+    else this.generateID();
   }
 
   onNoClick() {

@@ -1,6 +1,6 @@
 export class User {
-    public firstName: string[] = [];
-    public lastName: String;
+    public firstName: string;
+    public lastName: string;
     public email: string;
     public password: string;
     public telephone: number;

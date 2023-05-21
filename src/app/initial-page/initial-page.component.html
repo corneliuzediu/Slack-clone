@@ -15,21 +15,20 @@
             <div>
                 <mat-form-field>
                     <mat-label>Enter your Email</mat-label>
-                    <input type="email" formControlName="email" required #emailSignup>
+                    <input matInput type="email" formControlName="email" required #emailSignup>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <mat-label>Enter your Password</mat-label>
-                    <input type="password" formControlName="password" required #passswordSignup>
+                    <input matInput type="password" formControlName="password" required #passswordSignup>
                 </mat-form-field>
             </div>
             <div class="button-holder">
-                <button mat-raised-button>Forgot Password</button>
-                <button (click)="bypassLogIn()" mat-raised-button>Guest Login</button>
+                <button type="button" (click)="onSignup(emailSignup.value, passswordSignup.value)" [disabled]="loginForm.invalid" mat-raised-button color="primary">Login</button>
+                <button type="button" (click)="bypassLogIn()" mat-raised-button>Guest Login</button>
+                <button (click)="openDialogAddUser()" mat-raised-button>Sign Up</button>
             </div>
-            <button (click)="onSignup(emailSignup.value, passswordSignup.value)" [disabled]="loginForm.invalid" mat-raised-button color="primary">Login</button>
-            <button (click)="openDialogAddUser()" mat-raised-button>Sign In</button>
         </form>
     </mat-card>
 </div>

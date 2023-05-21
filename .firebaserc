@@ -1,14 +1,15 @@
 {
   "targets": {
-    "slack-clone-50162": {
+
+    "slack-4c371": {
       "hosting": {
         "Slack-clone": [
-          "slack-clone-50162"
+          "slack-4c371"
         ]
       }
     }
   },
   "projects": {
-    "default": "slack-clone-50162"
+    "default": "slack-4c371"
   }
 }

@@ -70,10 +70,10 @@ export class SidenavComponent {
     this.usersVisible = param;
   }
 
-  openMenuItem(param, index) {
-    this.highlightMenuItem(param, index);
-    this.dataService.selectedChannel = param;
-  }
+  // openMenuItem(param, index) {
+  //   this.highlightMenuItem(param, index);
+  //   this.dataService.selectedChannel = param;
+  // }
 
   openAddChannelDialog() {
     this.dialog.open(DialogAddChannelComponent, {

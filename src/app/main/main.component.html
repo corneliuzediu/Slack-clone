@@ -29,8 +29,8 @@
                 <mat-card class="menu_user_profile" (click)="$event.stopPropagation();">
                     <mat-card-header>
                         <div mat-card-avatar class="menu_user_img"><img src="./assets/img/user.png"></div>
-                        <div class="menu_user_head">
-                            <mat-card-title>{{user.firstName}} {{user.lastName}}</mat-card-title>
+                        <div class="menu_user_head" >
+                            <mat-card-title *ngIf="user">{{user.firstName}} {{user.lastName}}</mat-card-title>
                             <mat-card-subtitle>{{userStatus}}</mat-card-subtitle>
                         </div>
                     </mat-card-header>
@@ -42,12 +42,11 @@
                             matTooltip="See your profile" [matTooltipPosition]="'left'">Profile
                         </div>
                         <div class="menu_logOut">
-                            <button onclick="ngOnDestroy()" routerLink="/" mat-button color="warn">Log out</button>
+                            <button (click)="ngOnDestroy()" routerLink="/" mat-button color="warn">Log out</button>
                         </div>
                     </mat-card-content>
                 </mat-card>
             </mat-menu>
-            <app-chat></app-chat>
         </div>
     </mat-toolbar>
 
