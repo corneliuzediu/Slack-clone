@@ -7,8 +7,10 @@ $bg-color-6: rgb(100, 100, 100);
 $text-color: rgb(200, 200, 200);
 
 
-.name_app {
-    cursor: pointer;
+.logo {
+    height: 50px;
+    width: auto;
+    padding-left: 10px;
 }
 
 .content_wrapper {
@@ -256,7 +258,7 @@ $text-color: rgb(200, 200, 200);
 
 .sidenav_wrapper {
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 64px);
     background-color: $bg-color-2;
     color: $text-color;
 }

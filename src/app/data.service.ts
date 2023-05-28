@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   user;
+  answerContainer: boolean = false;
   selectedChannel;
   constructor() {
    

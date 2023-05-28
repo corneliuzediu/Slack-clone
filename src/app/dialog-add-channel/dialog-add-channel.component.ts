@@ -29,6 +29,7 @@ export class DialogAddChannelComponent {
         this.generateID();
         addDoc(this.coll, {
           ID: this.id,
+          messages: [],
           title: addedChannel
         });
         this.dialogRef.close();

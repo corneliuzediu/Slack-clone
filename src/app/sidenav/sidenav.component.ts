@@ -81,6 +81,7 @@ export class SidenavComponent {
   }
 
   highlightMenuItem(param, index) {
+    this.dataService.answerContainer = false;
     this.channels$.forEach((channel) => {
       for (let i = 0; i < channel.length; i++) {
         if (document.getElementById(`channel${i}`).classList.contains('background-focused')) {

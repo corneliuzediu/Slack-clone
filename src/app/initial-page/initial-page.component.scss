@@ -17,7 +17,7 @@
         cursor: pointer;
 
         &:hover{
-            background-color: white;
+            background-color: rgb(199, 202, 205);
             color: hsl(0, 68%, 62%);
             border: 2px solid firebrick;
         }
@@ -29,12 +29,18 @@
 }
 
 .login-container{
-    background-color: bisque;
+    background-color: #f9fbfd;
     height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
 }
 
 mat-card {

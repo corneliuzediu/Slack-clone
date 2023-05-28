@@ -1,11 +1,11 @@
 <div class="content_wrapper">
     <!-- Header -->
-    <mat-toolbar class="header_wrapper">
+    <mat-toolbar  class="header_wrapper">
         <div class="header_left">
-            <button mat-icon-button class="sidenav_button">
+            <!-- <button mat-icon-button class="sidenav_button">
                 <mat-icon (click)="drawer.toggle()">menu</mat-icon>
-            </button>
-            <span class="name_app" routerLink="../{{urlID}}">Slack-clone</span>
+            </button> -->
+            <img class="logo" src="../assets/img/logo_white.png">
             <span class="example-spacer"></span>
         </div>
         <form class="header_center">
@@ -26,7 +26,7 @@
             <button class="header_user_profile" #badge mat-button [matMenuTriggerFor]="myProfile" matBadge="0"
                 matBadgePosition="below"><img src="./assets/img/user.png"></button>
             <mat-menu class="header_user_menu" #myProfile="matMenu" xPosition="before">
-                <mat-card class="menu_user_profile" (click)="$event.stopPropagation();">
+                <mat-card class="menu_user_profile" >
                     <mat-card-header>
                         <div mat-card-avatar class="menu_user_img"><img src="./assets/img/user.png"></div>
                         <div class="menu_user_head" >
@@ -46,16 +46,17 @@
                         </div>
                     </mat-card-content>
                 </mat-card>
-            </mat-menu>
-        </div>
+            </mat-menu>  
+        </div>    
     </mat-toolbar>
 
     <!-- Sidenav -->
 
     <mat-drawer-container class="sidenav_wrapper" autosize>
-        <router-outlet name="body"></router-outlet>
+        <router-outlet name="body" (activate)="onOutletLoaded($event)"></router-outlet>
         <mat-drawer #drawer class="sidenav" [opened]="true" mode="side">
             <app-sidenav></app-sidenav>
         </mat-drawer>
-    </mat-drawer-container>
+    </mat-drawer-container> 
+    
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/models/user.class';
 import { Observable } from 'rxjs';
 import { DialogAddStatusComponent } from '../dialog-add-status/dialog-add-status.component';
@@ -44,14 +44,19 @@ export class MainComponent {
       this.docSnap = await getDoc(doc(this.firestore, 'users', this.urlID));
       this.user = this.docSnap.data();
       this.dataservice.user = this.user;
+      localStorage.setItem('userID', this.urlID);
     });
   }
 
   ngOnDestroy() {
     this.userRoute.unsubscribe();
     this.dataservice.user = {};
+    window.location.reload();
   }
 
+  onOutletLoaded(ChannelsComponent) {
+    ChannelsComponent.currentUser = this.user;
+  } 
 
   clearSearch() {
     this.searchlist = []
